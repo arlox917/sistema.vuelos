@@ -1,0 +1,9 @@
+cd Downloads\lix
+npm init -y
+npm install express socket.io
+node SERVER.js
+
+cd Desktop\sistema vuelos Bueno
+node SERVER.js
+
+'admin123@admin.com';
