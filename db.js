@@ -1,22 +1,14 @@
-const mysql = require("mysql2");
+const mysql = require('mysql2/promise');
 
 const db = mysql.createPool({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
+  host: 'gateway01-privatelink.us-west-2.prod.aws.tidbcloud.com',
+  port: 4000,
+  user: '2UJfnfeYBh113YFR.root',
+  password: 'FIx4jftwCWtZ2cuk',
+  database: 'flightdb',
   ssl: {
-    rejectUnauthorized: false
-  }
-});
-
-db.getConnection((err, connection) => {
-  if (err) {
-    console.error("❌ Error conectando a MySQL:", err);
-  } else {
-    console.log("✅ MySQL conectado correctamente (Aiven)");
-    connection.release();
+    minVersion: 'TLSv1.2',
+    rejectUnauthorized: true
   }
 });
 
